@@ -1,0 +1,1779 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*LOGO*/
+
+/* Style for circular logo */
+.logo-container {
+    display: flex;
+    position: absolute; /* Allows positioning at the top left */
+    top: 10px; /* Adjust distance from the top */
+    left: 20px; /* Adjust distance from the left */
+    height: 100px; /* Adjust size as needed */
+    width: 100px; /* Make it a square for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden; /* Ensures the image stays within the circle */
+    z-index: 1100; /* Place it above the nav bar */
+    border: 3px solid white; /* White border around the logo */
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+}
+
+.logo {
+    width: 100%; /* Full width to fit container */
+    height: 100%; /* Full height to fit container */
+    object-fit: cover; /* Ensures the logo does not stretch */
+    display: block; /* Remove any extra spacing around the image */
+}
+
+
+/* NAVIGATION BAR  */
+
+nav {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    background-color: transparent; /* Initially transparent */
+    padding: 0 20px; /* Padding for nav items */
+    height: 120px; /* Match the height of the logo container */
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space out logo and nav links */
+    position: fixed; /* Fixed positioning at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Stay on top of other content */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for when the navbar is scrolled */
+nav.scrolled {
+    background-color: rgb(252, 248, 233); /* Set background color when scrolled */
+}
+
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Horizontal layout */
+    justify-content: flex-end; /* Align menu items to the right */
+    align-items: center; /* Centers items vertically */
+    flex: 1; /* Ensure the nav items stretch across the container */
+    margin-right: 35px; /* Adjust the right margin as needed */
+}
+
+
+.nav-links {
+    display: flex; /* Horizontal layout for larger screens */
+    justify-content: center; /* Align to the right */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+/* Show nav links when active */
+.nav-links.active {
+    display: flex; /* Display dropdown menu */
+    width: 100px;
+}
+
+nav ul {
+    margin-right: 0; /* Reset margin for dropdown layout */
+}
+
+nav li {
+    margin: 10px 0; /* Add spacing between vertical items */
+    text-align: center; /* Center text in dropdown */
+}
+
+nav a {
+    font-size: 20px; /* Set font size for nav links */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 16px; /* Padding around links */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+nav a:hover {
+    background-color: #555; /* Change background on hover */
+}
+
+
+
+/* SOCIAL MEDIA */
+
+/* Social Links container */
+.social-links {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    gap: 10px;
+    z-index: 1000; /* Lower z-index to ensure burger menu is on top */
+}
+
+.social-links a {
+    font-size: 1.2em; /* Icon size */
+    color: rgb(78, 77, 77) !important; /* Icon color */
+    border: 2px solid white; /* White border around each icon */
+    border-radius: 50%; /* Circular icons */
+    padding: 4px; /* Space inside each circle */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.social-links a:hover {
+    background-color: white;
+    color: #050505;
+}
+
+.social-links ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Ensure icons align horizontally */
+    gap: 10px; /* Space between icons */
+}
+
+/* List item styling */
+.social-links li {
+    display: inline-block; /* Ensure each list item is inline */
+}
+
+/* Style for the social media icons */
+.social {
+    font-size: 1em; /* Icon size */
+    color: rgb(78, 77, 77) !important;
+    border: 2px solid white; /* White border around each icon */
+    border-radius: 50%; /* Make the border circular */
+    padding: 4px; /* Decrease padding inside the circle */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect */
+.social:hover {
+    background-color: white;
+    color: #050505;
+}
+
+/* Focus effect */
+.social:focus {
+    outline: 2px solid #927990;
+}
+
+.burger-menu {
+    display: none; /* Hidden by default for larger screens */
+    font-size: 24px;
+    color: rgb(7, 0, 0);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1200; /* Ensure it stays above social links */
+    position: absolute;
+    left: 20px; /* Adjust position as needed */
+    top: 30px; /* Adjust position as needed */
+    margin-left: 15px;
+}
+
+
+
+
+/* GENERAL MODAL STYLES*/
+
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+    overflow: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+
+
+
+/* Section Styles */
+.section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a6786;
+    text-align: center;
+}
+
+ /* SECTION 1 ( MAIN PAGE )*/
+
+/* Specific styling for Section 1 with background image */
+#section1 {
+    background-image: url('../images/background1.jpg'); 
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repetition of the image */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    opacity: 0.7; 
+    
+}
+
+/* Center content in Section 1 */
+#section1 h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    margin: 0 0 20px 0; /* Remove default margin and add space below */
+    color: #d19e1c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#section1 p {
+    font-family: "Playwrite GB S", cursive;
+    margin: 0; /* Remove default margin */
+    color: #b2d6c6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+ /* SECTION 2 ( WHO WE ARE )*/
+
+ #section2 {
+    background-color: rgb(252, 248, 233);
+    color: #55938f;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Stack children vertically */
+    align-items: center; /* Align children to the right */
+    justify-content: space-between; /* Center children vertically */
+    padding: 20px 80px; /* Add padding to the left and right */
+}
+
+#section2 .text-content {
+    flex: 1; /* Allow text to take up space */
+    text-align: left; /* Align text to the left */
+    margin-right: 20px; /* Space between text and image */
+    display: flex;
+    flex-direction: column; /* Stack text and button vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: flex-start; /* Align items to the left by default */
+}
+
+#section2 h2 {
+    margin-bottom: 20px; /* Add space between the h2 and paragraph */
+    padding: 20px 65px; /* Optional padding around the h2 text */
+    word-wrap: break-word; /* Ensure text wraps properly */
+    text-align: center; /* Center the text content */
+    font-size: 24px; /* Reduce font size */
+}
+
+#section2 p {
+    padding: 0 10px; /* Adjust padding for paragraph */
+    word-wrap: break-word; /* Ensure text wraps properly */
+    margin: 0; /* Reset margin */
+    text-align: center; /* Ensure paragraph text is centered */
+    font-size: 14px; /* Reduce font size */
+}
+
+/* Ensure button is not behind the image */
+#section2 .btn-primary {
+    margin-top: 20px; /* Add space above the button */
+    display: block; /* Make button a block element */
+    padding: 10px 20px;
+    background-color: #55938f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px; /* Adjust button font size */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: auto;  /* Center button horizontally */
+    margin-right: auto; /* Center button horizontally */
+}
+
+/* Hover effect for the button */
+#section2 .btn-primary:hover {
+    background-color: #1f3d3c;
+}
+
+#section2 .image-content {
+    flex: 0.5; /* Adjust image size */
+}
+
+#section2 img {
+    width: 100%; /* Image takes up full container width */
+    max-width: 350px; /* Optional: Limit max width */
+    height: 100vh; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    padding: 20px;
+}
+
+
+/* Modal Styles */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Dimmed background */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    animation: fadeIn 0.5s ease; /* Fade-in effect */
+}
+
+.modal-content-kcr {
+    position: relative;  /* Set the modal content to relative for positioning */
+    background-color: rgb(252, 248, 233); /* Outer modal color */
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+    width: 60%; /* Full width for medium-sized screens */
+    max-width: 1000px; /* Limit max width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    animation: slideIn 0.4s ease;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    max-height: 90%; /* Prevent overflow on smaller screens */
+    max-width: 1200px; 
+}
+
+.modal-content-kcr h2 {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 10px; /* Optional: Adjust margin to control spacing */
+    text-align: center; /* Optional: Center the header text */
+}
+
+
+/* Inner Box with White Background */
+.modal-inner-kcr {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color */
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 30px; /* Spacing between columns */
+}
+
+
+/* Styling for each condition list inside the columns */
+.modal-inner-kcr .condition-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 10px;
+}
+
+.modal-inner-kcr .condition-list ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 10px;
+}
+
+.modal-inner-kcr .condition-list li {
+    margin-bottom: 10px;  /* Add space between list items */
+    font-size: 10px;  /* Adjust font size here */
+}
+
+/* Style for Modal Images */
+.modal-images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-images img {
+    max-width: 45%;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+
+.modal-content-indian {
+    position: relative;  /* Set the modal content to relative for positioning */
+    background-color: rgb(252, 248, 233); /* Outer modal color */
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+    width: 60%; /* Full width for medium-sized screens */
+    max-width: 1200px; /* Limit max width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    animation: slideIn 0.4s ease;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    max-height: 90%; /* Prevent overflow on smaller screens */
+}
+
+.modal-inner-indian {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    gap: 15px; /* Spacing between sections */
+}
+
+
+.modal-content-facial {
+    position: relative;  /* Set the modal content to relative for positioning */
+    background-color: rgb(252, 248, 233); /* Outer modal color */
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+    width: 60%; /* Full width for medium-sized screens */
+    max-width: 1200px; /* Limit max width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    animation: slideIn 0.4s ease;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    max-height: 90%; /* Prevent overflow on smaller screens */
+}
+
+.modal-inner-facial {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout for facials */
+    gap: 30px;
+}
+
+.close-btn {
+    position: absolute;  /* Position relative to modal-content */
+    top: 10px;  /* Distance from the top */
+    right: 10px;  /* Distance from the right */
+    font-size: 24px;  /* Size of the close icon */
+    color: #aaa;  /* Light gray color for the close button */
+    cursor: pointer;  /* Change cursor to pointer to indicate clickable */
+    z-index: 1100;  /* Ensure it sits above the modal content */
+}
+
+.close-btn:hover {
+    color: black;  /* Change color on hover */
+}
+
+
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+   /* SECTION 3 ( WHAT WE DO ) */
+
+   #section3 {
+    background-color: white; /* Set background color to white */
+    color: #55938f; /* Keep the text color */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center items horizontally */
+    height: auto; /* Allow the section height to adjust dynamically */
+    padding: 20px; /* Add padding around the section */
+    gap: 20px; /* Add space between the text and image */
+}
+
+#section3 .image {
+    width: 45%; /* Set the width of the image container */
+    max-width: 600px; /* Limit the maximum width */
+    height: auto; /* Allow height to adjust naturally */
+}
+
+#section3 .image img {
+    width: 100%; /* Ensure the image fills the container width */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensure the image fits well within the container */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+#section3 .text {
+    width: 50%; /* Set the width of the text section */
+    max-width: 500px; /* Limit the maximum width */
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    word-wrap: break-word; /* Ensure text wraps properly */
+    font-size: 14px; /* Reduce text font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    margin: 0; /* Reset margin */
+    flex-direction: column; /* Stack h1 and p vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    padding: 0 20px; /* Add some padding for spacing */
+}
+
+#section3 h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 100px;
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+#section3 p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 500px; /* Prevent text from stretching too wide */
+    margin: 0;
+    text-align: center; /* Ensure text is centered */
+}
+
+
+
+
+
+
+ /* SECTION 4 ( MORE INFO ) */
+
+ #section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: rgb(252, 248, 233);
+    position: relative; /* Required for absolute positioning of the central line */
+}
+
+/* Add this style to center the heading in section4 */
+.more-info-heading {
+    font-size: 28px; /* Larger font size for the heading */
+    color: #55938f; /* Color matching the section theme */
+    text-align: center; /* Center-align the heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+    font-weight: bold; /* Bold text for emphasis */
+    position: absolute; /* Position it at the top */
+    top: 80px; /* Adjust the top position to create some space from the top edge */
+    left: 50%; /* Center the heading horizontally */
+    transform: translateX(-50%); /* Ensure the heading is perfectly centered */
+    width: 100%; /* Take full width for positioning */
+}
+
+.vertical-section {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Enable child elements like the line */
+    color: #55938f;
+    font-size: 14px; /* Make the text smaller */
+    line-height: 1.5; /* Improve readability */
+}
+
+.vertical-section h1 {
+    font-size: 24px; /* Adjusted smaller heading font size */
+    margin-bottom: 15px;
+}
+
+.icon {
+    font-size: 40px; /* Slightly smaller icon size */
+    color: #55938f;
+    margin-bottom: 15px;
+}
+
+.vertical-section p {
+    font-size: 14px; /* Smaller text size for paragraphs */
+    margin-bottom: 15px;
+    padding: 0 10px; /* Padding to prevent text overflow */
+}
+
+.vertical-section .more-info {
+    display: inline-block;
+    padding: 8px 16px; /* Adjust button size */
+    background-color: #55938f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px; /* Smaller button text size */
+    transition: background-color 0.3s;
+}
+
+.more-info:hover {
+    background-color: #1f3d3c; /* Darker shade on hover */
+}
+
+/* Central Splitting Line */
+.vertical-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #55938f;
+    transform: translateX(50%); /* Center the line between sections */
+}
+
+/* Remove line for last section */
+#pamper-party::after {
+    display: none;
+}
+
+
+
+/* Modal styles for Mobile View */
+#mobile-appointment-modal .modal,
+#pamper-party-modal .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Dimmed background */
+    overflow: auto; /* Enable scrolling for long content */
+    animation: fadeIn 0.5s ease; /* Fade-in effect */
+}
+
+/* Modal Content for Mobile */
+#mobile-appointment-modal .modal-content,
+#pamper-party-modal .modal-content {
+    background-color: rgb(252, 248, 233); /* Outer modal color */
+    margin: 5% auto; /* Center the modal with reduced margins */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    width: 90%; /* Adjust to almost full screen for mobile */
+    max-width: 400px; /* Optional: Limit maximum width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    animation: slideIn 0.4s ease; /* Slide-in animation */
+    font-size: 12px;
+}
+
+/* Inner Box with White Background */
+#mobile-appointment-modal .modal-inner,
+#pamper-party-modal .modal-inner {
+    background-color: #ffffff; /* White background for the inner box */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Modal Title for Mobile */
+#mobile-appointment-modal .modal-content h2,
+#pamper-party-modal .modal-content h2 {
+    font-size: 14px; /* Smaller font size for titles */
+    margin-bottom: 20px;
+    color: #55938f;
+}
+
+/* Adjust Footer Button for Mobile */
+.modal-footer {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    margin-top: 20px; /* Adjust if needed for spacing */
+}
+
+.modal-footer .btn-primary {
+    background-color: #55938f; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    padding: 12px 24px; /* Adjust button size */
+    font-size: 12px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove underline from link */
+    text-align: center; /* Center the text inside the button */
+    display: inline-block; /* Make sure it's an inline block to apply padding */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add hover effect for the button */
+.modal-footer .btn-primary:hover {
+    background-color: #1f3d3c; /* Darker shade on hover */
+}
+
+/* Close Button for Mobile */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 24px; /* Reduced size for mobile */
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+/* STYLING FOR ENQUIRE NOW MODALS */
+
+#enquiry-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
+}
+
+#enquiry-modal .modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+#enquiry-modal .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#enquiry-modal .close-btn:hover,
+#enquiry-modal .close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/* SECTION 5 (PRICING) */
+
+
+/* Styling for Section 5 */
+#section5 {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 300px; /* Optional: Adjust as needed for height */
+    text-align: center; /* Center text */
+    padding: 20px; /* Optional: Add padding for spacing */
+}
+
+/* Additional styling for each element */
+#section5 h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    color: #55938f;
+}
+
+#section5 p {
+    font-size: 1rem; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space between paragraph and button */
+    color: #555; /* Optional: change text color */
+    color: #55938f;
+}
+
+#section5 .btn {
+    font-size: 1rem; /* Adjust size as needed */
+    padding: 10px 20px; /* Adjust button padding */
+    background-color: #55938f; /* Custom background color */
+    color: #ffffff; /* Text color */
+    border: none; /* Remove border */
+}
+
+.btn-primary:hover {
+    background-color: #927990;
+    border-color: #927990;
+}
+
+
+/* Modal background */
+#pricing-modal .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensures it overlays all content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dimmed background */
+    overflow: auto;
+    animation: fadeIn 0.5s ease; /* Fade-in effect */
+}
+
+/* Modal content */
+#pricing-modal .modal-content {
+    background-color: rgb(252, 248, 233);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    max-width: 600px; /* Responsive width */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    animation: slideIn 0.4s ease; /* Slide-in animation */
+}
+
+
+/* Inner Box with White Background */
+#pricing-modal .modal-inner {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+
+/* Close button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #070707;
+    text-decoration: none;
+}
+
+/* Modal title */
+.modal-content h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Pricing list */
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-content ul li {
+    padding: 10px 0;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.modal-content ul li:last-child {
+    border-bottom: none;
+}
+
+/* Icons in pricing list */
+.modal-content ul li i {
+    color: #007bff;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Button hover effect */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#pricing-button:hover {
+    background-color: #1f3d3c;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* SECTION 6 ( REVIEWS ) */
+#section6 {
+    background-color: #f7f6f0; /* New background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    color: #55938f;
+    text-align: center;
+    padding: 20px;
+}
+
+.reviews-container {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+/* Each Review Style */
+.review {
+    display: none; /* Hide all reviews initially */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.review.active {
+    display: block; /* Show the active review */
+}
+
+/* Review Heading */
+.review h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Review Paragraph */
+.review p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Dots Style */
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #55938f;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #0b4b46; /* Darker plum when active */
+}
+
+
+/* SECTION 7 ( CONTACT ) */
+
+#section7 {
+    background-image: url('../images/Mobile-pamper.jpg'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Inner Box Styling */
+.contact-form-container {
+    background-color:#f7f6f0; /* New background color */
+    ; /* Semi-transparent background */
+    padding: 20px; /* Reduced padding to fit better */
+    border-radius: 10px;
+    width: 80%; /* Set the width relative to its parent */
+    max-width: 600px; /* Limit the max width */
+    text-align: center;
+    color: rgb(3, 3, 3); /* White text inside the box */
+    box-sizing: border-box; /* Include padding in the width and height calculation */
+    height: auto; /* Ensure height auto-adjusts to fit the content */
+}
+
+/* Heading Style */
+.contact-form-container h1 {
+    font-size: 24px; /* Smaller heading font size */
+    margin-bottom: 20px;
+}
+
+/* Contact Info Styling */
+.contact-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px; /* Smaller font size for info items */
+}
+
+.info-item i {
+    font-size: 18px; /* Adjust icon size */
+    margin-right: 10px;
+}
+
+/* Form Input Styles */
+.contact-form input, 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 8px; /* Reduced padding for a more compact look */
+    margin-bottom: 12px; /* Reduced margin */
+    border: 1px solid #c9c2c2; /* Add a light border for better visibility */
+    border-radius: 5px;
+    font-size: 14px; /* Smaller font size for form fields */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ccc; /* Placeholder color */
+}
+
+/* Textarea Styling */
+.contact-form textarea {
+    resize: none;
+    height: 100px; /* Reduced height for textarea */
+}
+
+/* Button Styling */
+.contact-form button {
+    background-color: #55938f;
+    color: white;
+    padding: 8px 16px; /* Reduced padding for button */
+    font-size: 14px; /* Smaller font size for the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #74546e; /* Darker plum on hover */
+}
+
+
+/* SECTION 8 ( GALLERY ) */
+
+#section8 {
+    margin-top: 20px;
+    padding: 50px 0px;
+    background-color: #f7f6f0;
+}
+
+.gallery-container {
+    text-align: center;
+}
+
+.gallery-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #55938f;
+}
+
+.carousel-inner {
+    max-width: 70%; /* Make the images smaller by limiting the carousel width */
+    margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-item img {
+    width: 100%; /* Ensure the images take up the full width of the carousel */
+    height: 500px; /* Increase height for a larger display */
+    object-fit: cover; /* Ensure the images are well-fitted within the container */
+}
+
+
+/* Position the carousel controls (arrows) outside the images */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 5%; /* Adjust the width of the control area */
+}
+
+/* Remove background and borders for arrow controls */
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+    content: '';
+    display: inline-block;
+    border: solid #55938f;
+    border-width: 0 4px 4px 0;
+    padding: 10px;
+    transform: rotate(135deg); /* Adjust angle for left */
+}
+
+.carousel-control-next-icon::after {
+    transform: rotate(-45deg); /* Adjust angle for right */
+}
+
+/* Position the arrows outside the images */
+.carousel-control-prev {
+    left: -60px; /* Move the left arrow outside the image */
+}
+
+.carousel-control-next {
+    right: -60px; /* Move the right arrow outside the image */
+    
+}
+
+/* Carousel indicators (dots) styling */
+.carousel-indicators {
+    bottom: -30px; /* Move the indicators below the carousel */
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #55938f; /* Dark background */
+    color: white; /* White text */
+    text-align: center; /* Center the text */
+    padding: 20px 0; /* Padding for spacing */
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
+
+.footer-content {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+}
+
+.footer-content p {
+    margin: 0; /* Remove default margin */
+    font-size: 12px; /* Reduce text size */
+}
+
+/* New class for social links in footer */
+.footer-social-links {
+    margin-top: 10px; /* Space between text and icons */
+    display: flex; /* Use flexbox for the icons */
+    justify-content: center; /* Center the icons */
+    flex-wrap: wrap; /* Allow icons to wrap within the footer */
+}
+
+.footer-social-links a {
+    color: white; /* Icon color */
+    margin: 0 10px; /* Space between icons */
+    font-size: 16px; /* Icon size */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Force resizing of icons inside <i> tag */
+.footer-social-links a i {
+    font-size: 16px !important; /* Force the icon size (adjust to desired size) */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Optional: If your icon library uses SVGs, apply a size directly to the SVG */
+.footer-social-links a svg {
+    width: 16px !important; /* Force the width of SVG icons */
+    height: 16px !important; /* Force the height of SVG icons */
+}
+
+/* Hover effect for social links */
+.footer-social-links a:hover {
+    color: #fcfdfd; /* Change color on hover */
+}
+
+
+
+
+
+                                  /* MEDIA QUERIES */
+
+
+/* MOBILE (SMALL PHONES) */
+@media screen and (max-width: 480px) {
+    /* Logo */
+    .logo-container {
+        width: 80px; /* Smaller logo */
+        height: 80px; /* Smaller logo */
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Burger Menu */
+    .burger-menu {
+        display: block; /* Show burger menu */
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%); /* Centered with the logo */
+        z-index: 1201; /* Above the logo */
+    }
+
+    /* Navigation links (hidden by default) */
+    .nav-links {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 80px; /* Adjusted so it's closer to the burger menu */
+    left: 50%;
+    transform: translateX(-50%); /* Centered under the burger menu */
+    width: 100%; /* Make the modal wider (full width of the screen) */
+    max-width: 500px; /* Limit the max width for better appearance */
+    background-color: rgb(252, 248, 233); /* Background color */
+    text-align: center;
+    padding: 10px 0; /* Reduce padding */
+    flex-direction: column;
+    border-radius: 10px; /* Slight rounded edges */
+    gap: 5px; /* Reduce the gap between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black; /* Dark color for links */
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 16px; /* Adjust text size */
+    font-weight: 500; /* Slightly bolder text for clarity */
+    text-align: center;
+    width: 100%; /* Make links take full width of the menu */
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+    line-height: 1.4; /* Adjust line height to reduce space */
+    text-shadow: none; /* Ensure no text shadow is applied */
+}
+
+.nav-links a:hover {
+    background-color: #55938f; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+
+    /* Social Links */
+    .social-links a {
+        font-size: 1.2em; /* Slightly bigger for better visibility */
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+  
+    /* Section 2 */
+
+    #section2 {
+        display: flex;
+        flex-direction: column; /* Keep content stacked vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        text-align: center; /* Ensures text is centered */
+        width: 100%; /* Ensure it takes full width */
+        height: auto; /* Allow the section to grow with content */
+        padding: 20px; /* Adjust padding for spacing */
+        box-sizing: border-box; /* Include padding in width/height calculation */
+    }
+    
+    #section2 h2 {
+        font-size: 22px; /* Smaller heading */
+        padding: 0 10px;
+        word-wrap: break-word;
+        margin: 0;
+        max-width: 80%; /* Allow heading to take more width */
+        text-align: center; /* Ensure heading is centered */
+        margin-left: auto; /* Center the element horizontally */
+        margin-right: auto; /* Center the element horizontally */
+    }
+    
+    #section2 p {
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center; /* Keep paragraph centered */
+        max-width: 80%; /* Prevent paragraph from stretching too wide */
+        margin-top: 25px;
+        margin-left: auto; /* Center the paragraph horizontally */
+        margin-right: auto; /* Center the paragraph horizontally */
+    }
+    
+    
+    
+
+    /* Section 3 */
+
+    #section3 {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center; /* Ensure everything is centered */
+        gap: 15px; /* Reduce space between elements */
+    }
+
+    #section3 .image {
+        width: 77%; /* Increase image size */
+        max-width: 350px; /* Set a reasonable max width */
+        display: block;
+        margin: 0 auto;
+    }
+
+    #section3 .text {
+        width: 90%;
+        max-width: 500px; /* Prevents text from stretching too wide */
+        padding: 0 10px;
+        text-align: center; /* Ensures text is centered */
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers all content horizontally */
+        justify-content: center; /* Centers content vertically */
+        margin: 0 auto; /* Ensures the entire text block is centered */
+    }
+    
+    
+    #section3 h1 {
+        font-size: 24px;
+        margin-top: 50px;
+        margin-bottom: 15px;
+        width: 100%; /* Ensures they take full width */
+        text-align: center; /* Forces direct centering */
+        margin: 0 auto; /* Ensures perfect alignment */
+    }
+    
+    #section3 p {
+        font-size: 14px;
+        line-height: 1.4;
+        width: 100%; /* Ensures they take full width */
+        text-align: center; /* Forces direct centering */
+        margin: 0 auto; /* Ensures perfect alignment */
+    }
+
+    /* Section 7*/
+
+    /* Contact Info Styling */
+    .contact-info {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center;
+        align-items: center; /* Center the items horizontally */
+        margin-bottom: 20px;
+    }
+
+    /* Info item styling to center each element */
+    .info-item {
+        display: flex;
+        flex-direction: column; /* Stack icon and text vertically */
+        align-items: center; /* Align text with icon */
+        font-size: 14px;
+        margin-bottom: 10px; /* Add a little gap between items */
+    }
+
+    .info-item i {
+        font-size: 18px;
+        margin-bottom: 5px; /* Add some space below the icon */
+    }
+}
+
+
+
+
+
+    /* LARGER PHONES AND SMALL TABLETS */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Logo */
+    .logo-container {
+        width: 100px; /* Slightly larger logo for medium screens */
+        height: 100px; /* Adjust logo size */
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Burger Menu */
+    .burger-menu {
+        display: block; /* Show burger menu */
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%); /* Centered with the logo */
+        z-index: 1201; /* Above the logo */
+    }
+
+    /* Navigation links (hidden by default) */
+    .nav-links {
+        display: none; /* Initially hidden */
+        position: absolute;
+        top: 80px; /* Slightly below the burger menu */
+        left: 48%; /* Center horizontally */
+        transform: translateX(-50%); /* Center the modal */
+        width: 100%;
+        max-width: 600px; /* A bit wider modal for larger screens */
+        background-color: rgb(252, 248, 233); /* Background color */
+        text-align: center;
+        padding: 15px 0; /* Slightly increased padding */
+        gap: 5px; /* Space between links */
+        flex-direction: column;
+        border-radius: 10px; /* Rounded edges */
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 16px; /* Slightly bigger padding for better usability */
+        font-size: 18px; /* Increase text size slightly for medium screens */
+        font-weight: 500;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        line-height: 1.4;
+        text-shadow: none; /* Ensure no text shadow is applied */
+    }
+
+    .nav-links a:hover {
+        background-color: #55938f; /* Change background on hover */
+        color: white;
+    }
+
+    /* Social Links */
+    .social-links a {
+        font-size: 1.4em; /* Slightly bigger icons for better visibility */
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        padding: 6px;
+    }
+
+    /* Section 2 */
+    #section2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        padding: 25px; /* More padding for medium screens */
+        box-sizing: border-box;
+    }
+
+    #section2 h2 {
+        font-size: 24px; /* Larger heading size */
+        padding: 0 15px;
+        word-wrap: break-word;
+        margin: 0;
+        max-width: 85%; /* Allow the heading to take more width */
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #section2 p {
+        font-size: 16px; /* Slightly bigger text */
+        line-height: 1.4;
+        text-align: center;
+        max-width: 85%; /* Prevent text from stretching too wide */
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Section 3 */
+    #section3 {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px; /* Slightly larger gap between elements */
+    }
+
+    #section3 .image {
+        width: 80%; /* Increase image size */
+        max-width: 400px; /* Set a reasonable max width */
+        display: block;
+        margin: 0 auto;
+    }
+
+    #section3 .text {
+        width: 90%;
+        max-width: 600px; /* Prevents text from stretching too wide */
+        padding: 0 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    #section3 h1 {
+        font-size: 28px; /* Slightly larger heading */
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #section3 p {
+        font-size: 16px; /* Slightly larger text */
+        line-height: 1.4;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    /* Section 7 - Contact Info */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px; /* Increased margin for more spacing */
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px; /* Slightly bigger text */
+        margin-bottom: 15px; /* Add a little gap between items */
+    }
+
+    .info-item i {
+        font-size: 20px; /* Slightly larger icon size */
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+   /* TABLETS AND SMALL DESKTOPS */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Logo */
+    .logo-container {
+        width: 110px; /* Slightly larger logo */
+        height: 110px;
+    }
+
+    .logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Burger Menu */
+    .burger-menu {
+        display: block; /* Show burger menu */
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%); /* Centered */
+        z-index: 1201; /* Above the logo */
+    }
+
+    /* Navigation links */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 47%;
+        transform: translateX(-50%);
+        width: 100%; /* Make it take more screen space */
+        max-width: 800px; /* Increase max width */
+        background-color: rgb(252, 248, 233);
+        text-align: center;
+        padding: 20px 0;
+        gap: 5px;
+        flex-direction: column;
+        border-radius: 10px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: black;
+        padding: 5px 10px; /* Reduce padding if needed */
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.3s ease;
+        line-height: 1.4;
+        text-shadow: none;
+    }
+
+    .nav-links a:hover {
+        background-color: #55938f;
+        color: white;
+    }
+
+    /* Social Links */
+    .social-links a {
+        font-size: 1.5em; /* Slightly bigger for visibility */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 8px;
+    }
+
+    /* Section 2 */
+    #section2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers content horizontally */
+        justify-content: center;
+        text-align: center; /* Ensures text inside is centered */
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        box-sizing: border-box;
+    }
+    
+    #section2 h2 {
+        font-size: 26px;
+        max-width: 90%;
+        text-align: center;
+        margin-left: auto; /* Ensures centering */
+        margin-right: auto;
+    }
+    
+    #section2 p {
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 90%;
+        margin-top: 35px;
+        text-align: center;
+        margin-left: auto; /* Ensures centering */
+        margin-right: auto;
+    }
+    
+
+    /* Section 3 */
+    #section3 {
+        flex-direction: column;
+        text-align: center;
+       
+    }
+
+    #section3 .image {
+        width: 85%;
+        max-width: 450px; /* Increase max size */
+        display: block;
+        margin: 0px auto;
+        margin-top: 60px;
+    }
+
+    #section3 .text {
+        width: 95%;
+        max-width: 700px;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    #section3 h1 {
+        font-size: 30px;
+        margin-bottom: 25px;
+        margin-top: 10px; /* Reduce gap above the heading */
+    }
+
+    #section3 p {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    /* Section 7 - Contact Info */
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .info-item i {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+}
+
